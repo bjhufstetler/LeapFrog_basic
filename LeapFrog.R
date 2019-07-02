@@ -8,9 +8,11 @@ cat("\f")
 # eil51, ts225, pr1002, gr120, rat195, Bays29, Berlin52, Cho130, KroA100, pcb442, pr76, gr48, pma343
 
 # Setup
+#install.packages("plotly")
+#install.packages("readxl")
 library(readxl)
 library(plotly)
-setwd("~/Documents/Brandon/AFIT/2019_Q2/OPER_623 Heuristic Search Methods/Project/leapfrog")
+setwd("~/LeapFrog")
 load("course_list.RData")
 
 ### TESTING
@@ -27,8 +29,8 @@ ptm <- proc.time()
 #########################################################
 
 game.map <- 3 # Pick which map to use [1,13]
-game.max <- 1 # Total number of games played [1,inf)
-game.length <- 1 # Iterations in each round [1,inf)
+game.max <- 10 # Total number of games played [1,inf)
+game.length <- 3 # Iterations in each round [1,inf)
 
 game.players <- 1 # Number of players (0,1]
 game.accuracy <- 0.5 # Starting accuracy of the players (0,1]
@@ -129,7 +131,7 @@ while (stop.crit == FALSE){
 ### TESTING
 time <- (proc.time()-ptm)[1]
 #data.full[(20*(x-1)+y),c(1:3,5)] <- c(x,y,time,best.dist)
-print(c(best.dist,course.dist,time))
+print(c(best.dist,course.dist,(best.dist-course.dist)/course.dist,time))
 #print(c("End",x,y,best.dist,course.dist,time))
 #  }}
 #boxplot(time~map,
