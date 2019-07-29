@@ -28,13 +28,13 @@ ptm <- proc.time()
 #########################################################
 
 # eil51, ts225, pr1002, gr120, rat195, Bays29, Berlin52, Cho130, KroA100, pcb442, pr76, gr48, pma343
-game.map <- 3 # Pick which map to use [1,13]
-game.max <- 1 # Total number of games played [1,inf)
-game.length <-10000 # Iterations in each round [1,inf)
+game.map <- 4 # Pick which map to use [1,13]
+game.max <- 40 # Total number of games played [1,inf)
+game.length <-1000 # Iterations in each round [1,inf)
 
 game.players <- 1 # Number of players (0,1]
-game.accuracy <- 0.5 # Starting accuracy of the players (0,1]
-game.alpha <- game.length # Player reduction curve [0,game.length]
+game.accuracy <- 0.1 # Starting accuracy of the players (0,1]
+game.alpha <- game.length/10 # Player reduction curve [0,game.length]
 
 #########################################################
 ############        INITIALIZATION        ###############
